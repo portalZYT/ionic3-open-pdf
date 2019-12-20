@@ -20,7 +20,7 @@ public class OpenPDFPlugin extends CordovaPlugin {
       Intent intent = new Intent(this.cordova.getActivity().getApplicationContext(), PDFActivity.class);
       intent.putExtra("url", url);
       this.cordova.getActivity().startActivity(intent);
-      this.cordova.getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+      // this.cordova.getActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
     return true;
   }
