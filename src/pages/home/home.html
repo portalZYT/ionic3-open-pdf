@@ -4,8 +4,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding ccWaterMarker [options]="optionsWater" [zIndex]="10" #Content>
   <button ion-button block colo="primary"
           (click)="viewImg()">查看
   </button>
+
 </ion-content>

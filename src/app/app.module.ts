@@ -15,7 +15,10 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AppInterceptor} from '../interceptors/app.interceptor';
 
-import {AccountService} from "../services/user.service";
+import { TestProvider } from '../providers/test/test';
+import {ComponentsModule} from "../components/components.module";
+// 水印
+import {WaterMarkerModule} from 'cc-water-marker';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import {AccountService} from "../services/user.service";
       backButtonText: '',//按钮内容,
       mode: 'ios'
     }),
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule,
+    WaterMarkerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,13 +49,13 @@ import {AccountService} from "../services/user.service";
   providers: [
     StatusBar,
     SplashScreen,
-    AccountService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AppInterceptor,
       multi: true
     },
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TestProvider
   ]
 })
 export class AppModule {
