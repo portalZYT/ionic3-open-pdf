@@ -8,5 +8,9 @@ ionic cordova plugin add cordova-plugin-openpdf
 
 https://www.npmjs.com/package/cordova-plugin-openpdf
 
+## 增加水印功能
+
+ 安装  npm install cc-water-marker --save 或 yarn add cc-water-marker
+
 
 
